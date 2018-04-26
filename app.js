@@ -2,7 +2,7 @@ var login = require("facebook-chat-api");
 var http = require('http');
 var cron = require('node-cron');
 var modeRTM = false;
-var MyPosition = {"latitude": "43.2861297", "longitude": "5.464669"};
+var MyPosition = {"latitude": "0", "longitude": "0"};
 var cronJobs = [];
 round = function (value, exp) {
   if (typeof exp === 'undefined' || +exp === 0)

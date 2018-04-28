@@ -118,31 +118,6 @@ login({email: "adressefacebook", password: "motdepasse"}, function callback (err
                     api.sendMessage("Veuillez envoyer votre position s'il vous plait", event.threadID);
                     modeRTM = true;
                 }
-                /*else if(event.body === '/showfriendlist') {
-                    var separator = event.body.split(" ");
-                    var name = separator[1];
-                    var lastname = separator[2];
-                    if(name.length > 0 && lastname.length>0) {
-                        api.getUserID(name+" "+lastname, function(err, data) {
-                            if(err) 
-                            { 
-                                return callback(err) 
-                            }
-                            else 
-                            {
-                                api.getFriendsList(function(err, data) {
-                                    if(err) return console.error(err);
-                                    console.log(data.length);
-                                });
-                            }
-                            var threadID = data[0].userID;
-                            
-                        });
-                    }
-                    api.sendMessage("JE ME CASSE DE CE GROUPE DE MERDE", event.threadID);
-                    api.removeUserFromGroup(api.getCurrentUserID(), event.threadID);
-                }*/
-                
                 if(modeRTM && event.attachments.length >0) {
                     api.sendMessage("Position enregistrée", event.threadID);
                     api.sendMessage("Je vous préviens quand un bus est a moins de 500 mètres de votre position...", event.threadID);
